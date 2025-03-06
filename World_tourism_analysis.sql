@@ -2,14 +2,14 @@
 
 -------------------------------------------------------------------------------------------------
 
--- Allocating unconsisting data by finding the the unnecessary rows that has big impact on the dataset
+-- Allocating inconsistent data by finding the unnecessary rows that have a big impact on the dataset
 
 SELECT * FROM world_tourism_economy
 ORDER BY tourism_receipts DESC;
 
 -------------------------------------------------------------------------------------------------
 
--- This query is designed to identify non numeric data in the table using REGEXP function 
+-- This query is designed to identify non-numeric data in the table using the REGEXP function 
 
 
 SELECT * FROM world_tourism_economy
@@ -25,7 +25,7 @@ WHERE tourism_receipts NOT REGEXP '^[0-9]+$'
 
 -------------------------------------------------------------------------------------------------
 
--- Updates column data types in the dataset from text format to a more convinent format
+-- Updates column data types in the dataset from text format to a more convenient format
 
 ALTER TABLE world_tourism_economy
 MODIFY year INT,
@@ -67,7 +67,7 @@ WHERE
         
 -------------------------------------------------------------------------------------------------
 
--- checking up if any duplicate. row_num only shows 1 value then we have no duplicates on our dataset 
+-- checking up if any duplicate. row_num only shows 1 value, then we have no duplicates on our dataset 
  
 SELECT 
         *,
@@ -79,7 +79,7 @@ ORDER BY row_num DESC
 -------------------------------------------------------------------------------------------------
 
 /* Comparing between the North African countries in 2019 tourism receipts. 
-Countries are labeled as 'Competitive' if their receipts exceed the average, and the rest as 'Non Competitive'. */
+Countries are labeled 'Competitive' if their receipts exceed the average, and the rest 'Non-Competitive'. */
 
 WITH CTE AS (
     SELECT AVG(tourism_receipts) AS Average_Receipt 
@@ -92,7 +92,7 @@ SELECT
     country, 
     tourism_receipts, 
     CASE 
-        WHEN tourism_receipts > CTE.Average_Receipt THEN 'Competitive' ELSE 'Non Competitive' 
+        WHEN tourism_receipts > CTE.Average_Receipt THEN 'Competitive' ELSE 'Non-Competitive' 
         END AS Performance
 FROM world_tourism_economy, CTE
 WHERE year = 2019 
@@ -114,7 +114,7 @@ WHERE country IN ('Morocco', 'Tunisia')
 GROUP BY country
 ORDER BY country;
 
--- Similar tourist arrivals but Morocco's tourism receipts are more than double Tunisia's.
+-- Similar tourist arrivals but Morocco's tourism receipts are doubling Tunisia's gains from tourism.
 
 -------------------------------------------------------------------------------------------------
 
@@ -194,7 +194,7 @@ ORDER BY MAR.year;
 
 -------------------------------------------------------------------------------------------------
 
-/* From the last two queries we can the conclued the following:
+/* From the last two queries we can conclude the following:
 
 From 1999 to 2020, Morocco consistently outperformed Tunisia in tourism receipts, despite Tunisia 
 having higher tourism arrivals in certain years. This is likely due to Morocco offering higher-value 
@@ -207,12 +207,12 @@ tourism markets.
 
 Additionally, Morocco demonstrated a stronger investment in its tourism sector, as evidenced by its higher 
 tourism expenditures as a percentage of imports. While Morocco often reached 4 to 7 percent, 
-Tunisia consistently lagged behind at around 2 to 3 percent, with only a rare peak at 5 percent in 2018-2019. 
+Tunisia consistently lagged at around 2 to 3 percent, with only a rare peak at 5 percent in 2018-2019. 
 This disparity indicates that Morocco's commitment to investing in tourism likely contributed to its sustained
 success and higher receipts, positioning it as a more competitive destination in the region. */
 
 -------------------------------------------------------------------------------------------------
-/* Ranking the top worlds income generating contries from tourism in 2019, the ranking changing by 2020 and 
+/* Ranking the top world's income generating countries from tourism in 2019, the ranking changed by 2020 and 
 the dropping percentage of the tourist receipts caused by COVID-19 */
 
 WITH CTE_2019 AS (
@@ -260,7 +260,7 @@ LIMIT 20
 ;
 
 /* From the results we notice that the top countries on this list are either tiny geographically (like islands or
-independent cities), or economically weak that they mainly just survive on tourism */
+independent cities), or economically weak, that they mainly just survive on tourism */
 
 -------------------------------------------------------------------------------------------------
 
