@@ -6,8 +6,6 @@ This repository contains the SQL analysis and visualizations for tourism data fr
 
 Tasks Performed: 
 
-  - Data Sourcing: Acquired the Kaggle World Tourism Dataset for analysis.
-  - Data Preparation: Imported the dataset into a SQL database for efficient querying and analysis.
   - Data Cleaning: Removed inconsistencies and handled missing values to ensure data quality.
   - SQL Queries: Executed complex queries for data extraction, including SELECT, JOIN, GROUP BY, ORDER BY, WHERE, HAVING, CTE, and aggregate functions.
   - Data Filtering: Focused analysis on Morocco, Tunisia, North Africa, and global regions for targeted insights.
