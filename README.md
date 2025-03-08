@@ -2,7 +2,7 @@ This repository contains the SQL analysis and visualizations for tourism data fr
 
   => Dataset Link: https://www.kaggle.com/datasets/bushraqurban/tourism-and-economic-impact
   
-  => Visualization Link: 
+  => Visualization Link (using Tableau): https://public.tableau.com/app/profile/omar.zin/viz/MoroccoVsTunisiaEvolution1999-2020_17413926129580/Dashboard1
 
 Tasks Performed: 
 
